@@ -1,0 +1,100 @@
+PRACTICAL – 6
+Title:
+
+Security Auditing of Android Application using Drozer
+
+Aim:
+
+To perform security auditing of an Android application using Drozer.
+
+Objectives:
+To understand Android application security auditing
+To install and configure Drozer
+To connect Drozer with Android emulator/device
+To identify insecure components and vulnerabilities
+To analyze application attack surface
+Procedure:
+(i) Install Drozer
+
+Open terminal and run:
+
+sudo apt update
+sudo apt install drozer -y
+
+Verify installation:
+
+drozer
+(ii) Install Drozer Agent on Emulator/Device
+
+Download Drozer Agent APK and install:
+
+adb install drozer-agent.apk
+
+Launch the Drozer Agent application on emulator/device.
+
+Enable:
+
+Embedded Server
+(iii) Forward Port using ADB
+adb forward tcp:31415 tcp:31415
+(iv) Connect Drozer Console
+drozer console connect
+
+👉 Successful connection message will appear.
+
+(v) Identify Installed Packages
+run app.package.list
+(vi) Find Attack Surface
+run app.package.attacksurface <package_name>
+
+Example:
+
+run app.package.attacksurface jakhar.aseem.diva
+(vii) Analyze Exported Components
+
+Check exported activities:
+
+run app.activity.info -a jakhar.aseem.diva
+
+Check services:
+
+run app.service.info -a jakhar.aseem.diva
+(viii) Test Vulnerabilities
+
+Use Drozer modules to:
+
+Access activities
+Query content providers
+Interact with services
+Observation:
+Drozer successfully connected to the Android emulator/device
+Installed packages and application details were retrieved
+Attack surface information was displayed
+Exported activities and services were identified
+Security weaknesses and exposed components were observed
+Result:
+
+Security auditing of the Android application was successfully performed using Drozer. The tool identified exported components, attack surfaces, and potential vulnerabilities within the application.
+
+Viva Questions:
+Q: What is Drozer?
+
+👉 Security testing framework for Android applications.
+
+Q: What is attack surface?
+
+👉 Entry points through which an application can be attacked.
+
+Q: Why use ADB port forwarding?
+
+👉 To connect Drozer console with Drozer Agent running on Android device/emulator.
+
+Q: What can Drozer detect?
+
+👉 Exported activities, services, content providers, and vulnerabilities.
+
+Important Commands
+adb forward tcp:31415 tcp:31415
+drozer console connect
+run app.package.list
+run app.package.attacksurface jakhar.aseem.diva
