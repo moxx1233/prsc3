@@ -1,0 +1,112 @@
+PRACTICAL – 4
+Title:
+
+Dynamic Analysis of Mobile Application using MobSF
+
+Aim:
+
+To perform dynamic analysis of an Android application using Mobile Security Framework (MobSF).
+
+Objectives:
+To understand dynamic analysis of Android applications
+To deploy MobSF using Docker
+To monitor application behavior during execution
+To analyze runtime activities such as network communication and API calls
+To identify runtime vulnerabilities in Android applications
+Procedure:
+(i) Install Docker
+
+Open terminal and run:
+
+sudo apt update
+sudo apt install docker.io docker-compose -y
+
+Start Docker service:
+
+sudo systemctl start docker
+sudo systemctl enable docker
+
+Verify installation:
+
+docker --version
+(ii) Download and Configure MobSF
+
+Clone MobSF repository:
+
+git clone --depth 1 https://github.com/MobSF/Mobile-Security-Framework-MobSF.git
+
+Navigate into directory:
+
+cd Mobile-Security-Framework-MobSF
+
+Run MobSF using Docker:
+
+sudo docker-compose up
+(iii) Open MobSF Dashboard
+
+Open browser and visit:
+
+http://127.0.0.1:8000
+(iv) Start Android Emulator
+
+Launch Android Virtual Device (AVD) from Android Studio.
+
+Verify emulator connection:
+
+adb devices
+(v) Install DIVA APK on Emulator
+adb install DivaApplication.apk
+(vi) Upload APK to MobSF
+Click Upload & Analyze
+Select DivaApplication.apk
+(vii) Perform Dynamic Analysis
+Start dynamic analysis from MobSF dashboard
+Launch the application on emulator
+Interact with application features
+
+MobSF monitors:
+
+Runtime behavior
+API calls
+Network traffic
+File access
+Log activity
+(viii) Observe Analysis Results
+
+Review:
+
+Runtime logs
+Network requests
+Application behavior
+Security warnings and vulnerabilities
+Observation:
+MobSF successfully monitored application behavior during execution
+Runtime activities and API calls were captured
+Network communication and logs were analyzed
+Dynamic analysis identified insecure runtime behavior and vulnerabilities
+Result:
+
+Dynamic analysis of the Android application was successfully performed using MobSF. Runtime behavior, network communication, and application interactions were monitored to identify potential security vulnerabilities.
+
+Viva Questions:
+Q: What is dynamic analysis?
+
+👉 Analysis of application behavior during execution.
+
+Q: Difference between static and dynamic analysis?
+
+👉 Static analysis is done without running the application, while dynamic analysis is performed during runtime.
+
+Q: What does MobSF monitor in dynamic analysis?
+
+👉 API calls, logs, network traffic, runtime behavior, and file access.
+
+Q: Why is dynamic analysis important?
+
+👉 It helps detect runtime vulnerabilities that may not appear in static analysis.
+
+Important Commands
+docker --version
+sudo docker-compose up
+adb devices
+adb install DivaApplication.apk
