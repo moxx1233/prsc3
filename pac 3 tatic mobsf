@@ -1,0 +1,98 @@
+PRACTICAL – 3
+Title:
+
+Static Analysis of Mobile Application using MobSF
+
+Aim:
+
+To perform static analysis of an Android application using Mobile Security Framework (MobSF) deployed with Docker.
+
+Objectives:
+To understand static analysis of Android applications
+To install and configure MobSF using Docker
+To analyze APK files without executing them
+To identify permissions, vulnerabilities, and insecure configurations
+To study application source code and manifest details
+Procedure:
+(i) Install Docker
+
+Open terminal and run:
+
+sudo apt update
+sudo apt install docker.io docker-compose -y
+
+Start Docker service:
+
+sudo systemctl start docker
+sudo systemctl enable docker
+
+Verify installation:
+
+docker --version
+(ii) Download MobSF
+
+Clone MobSF repository:
+
+git clone --depth 1 https://github.com/MobSF/Mobile-Security-Framework-MobSF.git
+
+Navigate into directory:
+
+cd Mobile-Security-Framework-MobSF
+(iii) Run MobSF using Docker
+
+Start MobSF container:
+
+sudo docker-compose up
+(iv) Open MobSF Dashboard
+
+Open browser and visit:
+
+http://127.0.0.1:8000
+(v) Upload APK File
+Click Upload & Analyze
+Select APK file (diva.apk)
+Wait for analysis completion
+(vi) Analyze Security Report
+
+Observe:
+
+Application permissions
+Manifest configuration
+Hardcoded secrets and API keys
+Activities and services
+Vulnerability reports and security score
+(vii) Review Decompiled Code
+Open source code section
+Analyze Java code and AndroidManifest.xml
+Observation:
+MobSF was successfully deployed using Docker
+APK file was uploaded and analyzed successfully
+Application permissions and components were identified
+Security vulnerabilities and insecure configurations were detected
+Decompiled source code and manifest details were displayed
+Result:
+
+Static analysis of the Android application was successfully performed using MobSF deployed through Docker. The framework identified permissions, application components, and potential security vulnerabilities without executing the application.
+
+Viva Questions:
+Q: What is MobSF?
+
+👉 Mobile Security Framework used for mobile application security analysis.
+
+Q: What is static analysis?
+
+👉 Analysis of application code without running the application.
+
+Q: Why use Docker for MobSF?
+
+👉 Docker provides isolated and consistent deployment environment.
+
+Q: What information does MobSF provide?
+
+👉 Permissions, vulnerabilities, manifest details, source code, APIs, and security risks.
+
+Important Commands
+docker --version
+git clone --depth 1 https://github.com/MobSF/Mobile-Security-Framework-MobSF.git
+cd Mobile-Security-Framework-MobSF
+sudo docker-compose up
