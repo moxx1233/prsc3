@@ -1,0 +1,100 @@
+PRACTICAL – 5
+Title:
+
+Reverse Engineering of Android Application using APK Tool, Hex Dump and Dex Dump
+
+Aim:
+
+To perform reverse engineering of an Android application using APK Tool, Hex Dump, and Dex Dump.
+
+Objectives:
+To understand reverse engineering of Android applications
+To decompile APK files using APK Tool
+To analyze binary content using Hex Dump
+To examine Dalvik bytecode using Dex Dump
+To study application structure and source components
+Procedure:
+(i) Install Required Tools
+
+Open terminal and run:
+
+sudo apt update
+sudo apt install apktool dexdump xxd -y
+
+Verify installation:
+
+apktool --version
+(ii) Obtain APK File
+
+Download or place the APK file (DivaApplication.apk) in the working directory.
+
+(iii) Decompile APK using APK Tool
+apktool d DivaApplication.apk
+
+👉 Decompiled files will be stored in a folder.
+
+(iv) Analyze Decompiled Files
+
+Navigate into extracted folder:
+
+cd DivaApplication
+
+Observe:
+
+AndroidManifest.xml
+res directory
+smali files
+(v) Perform Hex Dump Analysis
+xxd DivaApplication.apk | head
+
+👉 Displays hexadecimal representation of APK contents.
+
+(vi) Extract Dex File Information
+dexdump DivaApplication.apk | less
+
+OR
+
+dexdump classes.dex | less
+
+👉 Displays Dalvik bytecode and class information.
+
+(vii) Analyze Application Components
+
+Observe:
+
+Package name
+Activities
+Permissions
+Strings and methods
+Smali code structure
+Observation:
+APK Tool successfully decompiled the APK file
+AndroidManifest.xml and resource files were extracted
+Hex dump displayed binary content of the APK
+Dex Dump revealed Dalvik bytecode and class details
+Application structure and components were analyzed successfully
+Result:
+
+Reverse engineering of the Android application was successfully performed using APK Tool, Hex Dump, and Dex Dump. The APK structure, manifest, resources, and bytecode were analyzed effectively.
+
+Viva Questions:
+Q: What is APK Tool used for?
+
+👉 Used to decompile and rebuild Android APK files.
+
+Q: What is reverse engineering?
+
+👉 Process of analyzing software to understand its internal structure and behavior.
+
+Q: What is Hex Dump?
+
+👉 Hexadecimal representation of binary file contents.
+
+Q: What is Dex Dump?
+
+👉 Tool used to analyze Dalvik Executable (DEX) bytecode.
+
+Important Commands
+apktool d DivaApplication.apk
+xxd DivaApplication.apk | head
+dexdump DivaApplication.apk | less
